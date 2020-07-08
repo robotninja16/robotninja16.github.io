@@ -32,3 +32,6 @@
     background-color: rgb(204, 0, 0);
     transition: none;
 }
+a {
+    text-decoration: none;
+}
