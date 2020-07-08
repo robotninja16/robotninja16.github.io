@@ -9,12 +9,20 @@
 
 <body>
     <link rel="stylesheet" href="style.css">
+    <script src="events.js"></script>
     <div class="flex menu">
+        <div class="menu-button current-location-button">
+            <div style="font-size:30px;font-family: Arial, Helvetica, sans-serif;">Home</div><br>
+            <p class="current-location">You're here.</p>
+        </div>
         <div class="menu-button"></div>
         <div class="menu-button"></div>
         <div class="menu-button"></div>
-        <div class="menu-button"></div>
-        <div class="menu-button" onclick="window.location.href = 'https:/' + '/' + 'scratch.mit.edu/'"><span style="font-size:30px;font-family:Arial, Helvetica, sans-serif">Scratch</span><br><span style="font-family:Arial, Helvetica, sans-serif">Imagine, Program, Share</span></div>
+        <div class="menu-button" onclick="window.location.href = 'https:/' + '/' + 'scratch.mit.edu/'"
+            onmousedown="mouseClick(event, 'https:/' + '/' + 'scratch.mit.edu/');"
+            oncontextmenu="mouseClick({button:2}, 'https:/' + '/' + 'scratch.mit.edu/', event);"><span
+                style="font-size:30px;font-family:Arial, Helvetica, sans-serif">Scratch</span><br><span
+                style="font-family:Arial, Helvetica, sans-serif">Imagine, Program, Share</span></div>
     </div>
 </body>
 
