@@ -1,4 +1,19 @@
-body { margin: 0px; }
+body { margin: 100px 20px 0px 20px; font-family: Arial, Helvetica, sans-serif; }
+.page-header { 
+    text-align: center; user-select: none;
+    height: 37px;
+    overflow-y: hidden;
+    transition: font-size 0.5s, color 0.5s, background-color 0.5s, height 0.5s;
+}
+.page-header:hover {
+    background-color: white;
+    color: black;
+    font-size: 40px;
+    height: 100px;
+}
+.page-subheader {
+    text-align: center;
+}
 html { background-color: rgb(0, 25, 50); }
 div { color: white; }
 .shoulder-right {
@@ -19,8 +34,7 @@ div { color: white; }
 }
 .over-shoulder { transform: translateY(-100px); }
 .menu {
-    position: sticky;
-    position: -webkit-sticky;
+    position: fixed;
     left: 0px;
     top: 0px;
     width: 100%;
@@ -72,7 +86,7 @@ a:not(hover) .menu-button {
         0px 0px 0px black;
     transition: background 0.5s, border-radius 0.5s, box-shadow 0.5s;
 }
-.current-location { font-family: Arial, Helvetica, sans-serif; font-size: 18px; transform: translateY(-27px); }
+.current-location { font-size: 18px; transform: translateY(-27px); }
 .current-location-button:hover .current-location { opacity: 1; transition: opacity 0.5s; }
 .current-location-button:not(hover) .current-location { opacity: 0; transition: opacity 0.5s; }
 .current-location-button {
@@ -97,6 +111,7 @@ a { text-decoration: none; }
     width: 20%; border-radius: 0px;
     height: 100px;
 }
+p { font-size: 17px; }
 @media screen and (max-width: 910px) {
     .subtext-scratch {
         visibility: hidden;
