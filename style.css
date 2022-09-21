@@ -90,7 +90,7 @@ a:not(hover) .menu-button {
 .current-location-button:hover .current-location { opacity: 1; transition: opacity 0.5s; }
 .current-location-button:not(hover) .current-location { opacity: 0; transition: opacity 0.5s; }
 .current-location-button {
-    width: 20%; border-radius: 0px;
+    width: 25%; border-radius: 0px;
     text-align: center; vertical-align: auto; user-select: none;
     color: white;
 }
@@ -108,7 +108,7 @@ a:not(hover) .menu-button {
 .menu-button:not(hover) img { background-color: #4d97ff; transition: background-color 0.5s; }
 a { text-decoration: none; }
 .menu-link {
-    width: 20%; border-radius: 0px;
+    width: 25%; border-radius: 0px;
     height: 100px;
 }
 p { font-size: 17px; }
