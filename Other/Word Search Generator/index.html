@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Search Generator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="direction.js"></script>
+    <script src="tableSlot.js"></script>
+    <script src="generator.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <h2>Word Search Generator</h2>
+    <div id="generator">
+        <div><span>Size: </span><input id="width-input" type="number" value="10"><span>×</span><input id="height-input"
+                type="number" value="10"></div>
+        <div>
+            <span>Enable Diagonals</span><input id="enable-diagonals-box" type="checkbox">
+            <span>Enable Up</span><input id="enable-up-box" type="checkbox">
+            <span>Enable Left</span><input id="enable-left-box" type="checkbox">
+        </div>
+        <div class="spacing-below"><button onclick="removeAllEntries();">Remove All</button></div>
+        <div style="display:inline-block" id="word-input-list"><input type="text"
+                onkeydown="wordListInput_keyPressed(this, event);" oninput="setAllCaps(this);"></div>
+        <div><button id="generate-word-search-btn" onclick="generateWordSearch();">Generate!</button></div>
+    </div>
+    <div id="tables" style="display:none;">
+        <div><button onclick="showGenerator();">← Generate another</button></div>
+        <table id="word-search-key" class="word-search-table"></table>
+        <hr>
+        <table id="word-search" class="word-search-table"></table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+html, body {
+    background-color: rgb(0, 25, 50);
+    text-align: center;
+}
+* {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+input {
+    background-color: rgb(25, 50, 75);
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+}
+input[type="number"] {
+    width: 32px;
+    text-align: left;
+}
+#word-input-list {
+    max-height: 300px;
+    overflow-y: scroll;
+    max-width: 210px;
+    width: -moz-fit-content;
+    width: fit-content;
+    border: 2px solid white;
+    padding: 5px;
+}
+button {
+    background-color: rgb(26, 81, 136);
+    border: 1px solid white;
+    border-radius: 10px;
+}
+.spacing-below {
+    margin-bottom: 10px;
+}
+body>*:first-child {
+    margin-top: 2em;
+}
+body * {
+    margin: 3px;
+}
+#generate-word-search-btn {
+    font-size: xx-large;
+    border-radius: 20px;
+    background-color: rgb(26, 151, 43);
+}
+.word-search-key-highlighted-item {
+    background-color: rgb(131, 130, 54);
+}
+.word-search-table {
+    display: inline-block;
+}
+.word-search-table>* {
+    height: 20px;
+    display: block;
+    margin: 0px;
+    margin-bottom: 2px;
+}
+.word-search-table>*>* {
+    width: 20px;
+    display: inline-block;
+    margin: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
