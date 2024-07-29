@@ -83,3 +83,17 @@ function downloadWordSearchImage() {
         dummy.remove();
     });
 }
+
+function displayErrors(errorList) {
+    let errorListElement = document.getElementById("error-list");
+    for (let error of errorList) {
+        let errorElement = document.createElement('p');
+        errorElement.innerText = error;
+        errorListElement.appendChild(errorElement);
+    }
+}
+
+function hideOldErrors() {
+    let errorListElement = document.getElementById("error-list");
+    while (errorListElement.children.length > 0) errorListElement.children[0].remove();
+}

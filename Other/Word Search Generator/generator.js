@@ -1,5 +1,5 @@
-let allowedCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let wordList = ["STRANGE", "SET", "OF", "RANDOM", "WORDS"];
+let allowedCharacters = "";
+let wordList = [];
 let wordConfigurations = [];
 let width = 10, height = 10;
 let enableDiagonals = false, enableUp = false, enableLeft = false;
@@ -28,6 +28,14 @@ function loadVariablesFromUser() {
 
 function generateWordSearch() {
     loadVariablesFromUser();
+
+    hideOldErrors();
+
+    let precheckErrors = doSafetyPreCheck(wordList);
+    if (precheckErrors.length > 0) {
+        displayErrors(precheckErrors);
+        return;
+    }
 
     let restartWordSearch = false, failCount = 0;
     do {
@@ -71,7 +79,7 @@ function generateWordSearch() {
         }
         if (restartWordSearch) failCount++;
     } while (restartWordSearch && failCount < 30);
-    
+
     if (failCount >= 30) {
         console.warn("Failed to generate.");
         return;
@@ -80,6 +88,40 @@ function generateWordSearch() {
     printTable(wordSearchTable);
 
     updateAndDisplayWordSearch(wordSearchTable, width, height, wordList, wordConfigurations);
+}
+
+function doSafetyPreCheck(wordList) {
+    let errorList = [];
+    let reversedWords = [];
+    for (let word of wordList) {
+        let newWord = "";
+        for (let char of word) {
+            newWord = char + newWord;
+        }
+        reversedWords.push(newWord);
+    }
+    for (let i = 0; i < wordList.length; i++) {
+        for (let j = 0; j < wordList.length; j++) {
+            if (i == j) continue;
+            if (wordList[i] == wordList[j]) {
+                errorList.push(`Can't generate. ${wordList[i]} is a duplicate of ${wordList[j]}.`);
+                continue;
+            }
+            if (wordList[i] == reversedWords[j]) {
+                errorList.push(`Can't generate. ${wordList[i]} is the same as ${wordList[j]} backwards. (${reversedWords[j]})`);
+                continue;
+            }
+            if (wordList[i].indexOf(wordList[j]) > -1)
+                errorList.push(`Can't generate. ${wordList[i]} contains ${wordList[j]}.`);
+            if (wordList[j].indexOf(wordList[i]) > -1)
+                errorList.push(`Can't generate. ${wordList[j]} contains ${wordList[i]}.`);
+            if (reversedWords[j].indexOf(wordList[i]) > -1)
+                errorList.push(`Can't generate. ${wordList[j]} backwards (${reversedWords[j]}) contains ${ wordList[i]}.`);
+            if (wordList[i].indexOf(reversedWords[j]) > -1)
+                errorList.push(`Can't generate. ${wordList[i]} contains ${wordList[j]} backwards. (${reversedWords[j]})`);
+        }
+    }
+    return errorList;
 }
 
 function canPlaceWord(word, location, direction) {
