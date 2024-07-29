@@ -2,7 +2,7 @@ html, body {
     background-color: rgb(0, 25, 50);
     text-align: center;
 }
-* {
+:not(.flex *, .menu) {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -10,6 +10,7 @@ input {
     background-color: rgb(25, 50, 75);
     border: 1px solid white;
     border-radius: 10px;
+    padding: 0px 5px 0px 5px;
     text-align: center;
 }
 input[type="number"] {
@@ -25,18 +26,17 @@ input[type="number"] {
     border: 2px solid white;
     padding: 5px;
 }
-button {
+button:not(.flex *, .menu *), a:not(.flex *, .menu *) {
     background-color: rgb(26, 81, 136);
     border: 1px solid white;
     border-radius: 10px;
+    text-decoration: none;
+    padding: 0px 5px 0px 5px;
 }
 .spacing-below {
     margin-bottom: 10px;
 }
-body>*:first-child {
-    margin-top: 2em;
-}
-body * {
+body *:not(.flex *, .menu, .flex *, .menu *) {
     margin: 3px;
 }
 #generate-word-search-btn {
@@ -62,4 +62,7 @@ body * {
     margin: 0px;
     padding-top: 2px;
     padding-bottom: 2px;
+}
+#download-img-btn {
+    background-color: rgb(26, 151, 43);
 }

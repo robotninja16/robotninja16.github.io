@@ -13,7 +13,7 @@ function loadVariablesFromUser() {
     enableLeft = document.getElementById("enable-left-box").checked;
     wordList = [];
     allowedCharacters = "";
-    let inputs = document.querySelectorAll("input");
+    let inputs = document.querySelectorAll("#word-input-list input");
     for (let i = 0; i < inputs.length; i++) {
         if (inputs[i].type == "text" && !inputs[i].disabled && inputs[i].value != "") {
             let upperCaseValue = inputs[i].value.toUpperCase();
@@ -29,7 +29,7 @@ function loadVariablesFromUser() {
 function generateWordSearch() {
     loadVariablesFromUser();
 
-    let restartWordSearch = false;
+    let restartWordSearch = false, failCount = 0;
     do {
         try {
             restartWordSearch = false;
@@ -69,11 +69,17 @@ function generateWordSearch() {
             console.warn(error);
             restartWordSearch = true;
         }
-    } while (restartWordSearch);
+        if (restartWordSearch) failCount++;
+    } while (restartWordSearch && failCount < 30);
+    
+    if (failCount >= 30) {
+        console.warn("Failed to generate.");
+        return;
+    }
 
     printTable(wordSearchTable);
 
-    updateAndDisplayWordSearchTable(wordSearchTable, width, height, wordList, wordConfigurations);
+    updateAndDisplayWordSearch(wordSearchTable, width, height, wordList, wordConfigurations);
 }
 
 function canPlaceWord(word, location, direction) {

@@ -6,21 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Word Search Generator</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="direction.js"></script>
     <script src="tableSlot.js"></script>
     <script src="generator.js"></script>
+    <script src="drawWordSearch.js"></script>
     <script src="main.js"></script>
 </head>
 
 <body>
+    <div class="flex menu">
+        <a href="../../" class="menu-link">
+            <div class="menu-button">
+                <span style="font-size:30px;font-family: Arial, Helvetica, sans-serif;">
+                    <div class="title">Home<br></div><i class="material-icons" style="font-size:50px;">home</i>
+                </span><br>
+            </div>
+        </a>
+        <a href="../../Games/" class="menu-link">
+            <div class="menu-button">
+                <span style="font-size:30px;font-family: Arial, Helvetica, sans-serif;"><div class="title">Games</div><i class="material-icons" style="font-size:50px;">videogame_asset</i></span>
+            </div>
+        </a>
+        <a href="../../Tutorials/" class="menu-link">
+            <div class="menu-button">
+                <span style="font-size:30px;font-family: Arial, Helvetica, sans-serif;"><div class="title">Tutorials</div><i class="material-icons" style="font-size:40px;">import_contacts</i></span><br>
+            </div>
+        </a>
+        <a href="../../Other/" class="menu-link">
+            <div class="menu-button">
+                <span style="font-size:30px;font-family: Arial, Helvetica, sans-serif;"><div class="title">Other<br></div><i class="material-icons" style="font-size:50px;">more_horiz</i></span><br>
+            </div>
+        </a>
+    </div>
     <h2>Word Search Generator</h2>
     <div id="generator">
-        <div><span>Size: </span><input id="width-input" type="number" value="10"><span>×</span><input id="height-input"
-                type="number" value="10"></div>
+        <div><span>Title: </span><input id="title-input" type="text" value="Word Search"><span>Title Font Size:
+            </span><input id="title-font-size-input" type="number" value="60"></div>
         <div>
-            <span>Enable Diagonals</span><input id="enable-diagonals-box" type="checkbox">
-            <span>Enable Up</span><input id="enable-up-box" type="checkbox">
-            <span>Enable Left</span><input id="enable-left-box" type="checkbox">
+            <span>Size: </span><input id="width-input" type="number" value="10"><span>×</span><input id="height-input"
+                type="number" value="10">
+            <span>Font Size: </span><input id="font-size-input" type="number" value="20">
+        </div>
+        <div>
+            <span>Enable diagonals</span><input id="enable-diagonals-box" type="checkbox">
+            <span>Enable up</span><input id="enable-up-box" type="checkbox">
+            <span>Enable left</span><input id="enable-left-box" type="checkbox">
         </div>
         <div class="spacing-below"><button onclick="removeAllEntries();">Remove All</button></div>
         <div style="display:inline-block" id="word-input-list"><input type="text"
@@ -28,10 +60,12 @@
         <div><button id="generate-word-search-btn" onclick="generateWordSearch();">Generate!</button></div>
     </div>
     <div id="tables" style="display:none;">
-        <div><button onclick="showGenerator();">← Generate another</button></div>
-        <table id="word-search-key" class="word-search-table"></table>
-        <hr>
-        <table id="word-search" class="word-search-table"></table>
+        <div>
+            <button onclick="showGenerator();">← Generate another</button>
+            <span>Show key</span><input type="checkbox" id="show-key-checkbox" onchange="updateAndDisplayWordSearch()">
+            <button id="download-img-btn" onclick="downloadWordSearchImage();">Download</button>
+        </div>
+        <canvas id="word-search-canvas" width="816" height="1056">
     </div>
 </body>
 

@@ -58,48 +58,28 @@ function setAllCaps(inputElement) {
     inputElement.value = inputElement.value.toUpperCase();
 }
 
-function updateAndDisplayWordSearchTable(wordSearchTable, width, height, wordList, wordConfigurations) {
-    clearTables();
-    for (let y = 0; y < height; y++) {
-        addWordSearchRow();
-        for (let x = 0; x < width; x++) {
-            addWordSearchItem(wordSearchTable[y][x], y);
-        }
-    }
-    for (let i = 0; i < wordList.length; i++) {
-        let x = wordConfigurations[i].x, y = wordConfigurations[i].y, direction = wordConfigurations[i].direction;
-        for (let j = 0; j < wordList[i].length; j++) {
-            highlightWordSearchItem(x, y);
-            x += direction.x; y += direction.y;
-        }
-    }
-    document.getElementById("generator").style.display = "none";
-    document.getElementById("tables").style.display = "block";
-}
-
-function clearTables() {
-    let table1 = document.getElementById("word-search");
-    let table2 = document.getElementById("word-search-key");
-    while (table1.children.length > 0) table1.children[0].remove();
-    while (table2.children.length > 0) table2.children[0].remove();
-}
-
-function addWordSearchRow() {
-    document.getElementById("word-search").appendChild(document.createElement("tr"));
-    document.getElementById("word-search-key").appendChild(document.createElement("tr"));
-}
-
-function addWordSearchItem(item, column) {
-    let createItem = (item) => { let itemElement = document.createElement("td"); itemElement.innerText = item; return itemElement; }
-    document.getElementById("word-search").children[column].appendChild(createItem(item));
-    document.getElementById("word-search-key").children[column].appendChild(createItem(item));
-}
-
-function highlightWordSearchItem(x, y) {
-    document.getElementById("word-search-key").children[y].children[x].classList.add("word-search-key-highlighted-item");
-}
-
 function showGenerator() {
     document.getElementById("generator").style.display = "block";
     document.getElementById("tables").style.display = "none";
+}
+
+function updateAndDisplayWordSearch() {
+    document.getElementById("generator").style.display = "none";
+    document.getElementById("tables").style.display = "block";
+    let canvas = document.getElementById("word-search-canvas");
+    let showKey = document.getElementById("show-key-checkbox").checked;
+    let fontSize = document.getElementById("font-size-input").value;
+    let title = document.getElementById("title-input").value;
+    let titleFontSize = document.getElementById("title-font-size-input").value;
+    drawWordSearchToCanvas(wordSearchTable, wordList, wordConfigurations, canvas, showKey, fontSize, title, titleFontSize);
+}
+
+function downloadWordSearchImage() {
+    document.getElementById("word-search-canvas").toBlob(function(blob) {
+        var dummy = document.createElement('a');
+        dummy.href = URL.createObjectURL(blob);
+        dummy.download = 'word search ' + new Date().toDateString() + '.png';
+        dummy.click();
+        dummy.remove();
+    });
 }
