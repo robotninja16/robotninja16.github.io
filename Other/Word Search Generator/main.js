@@ -1,3 +1,7 @@
+let bgImageMode = 0;
+let bgImageModes = ["normal size", "shrink image to fit", "grow to fit", "fill page"];
+// 0 = don't change, 1 = shrink, 2 = grow, 3 = fill
+
 function wordListInput_keyPressed(inputElement, event) {
     if (event.key === "Enter") {
         event.preventDefault();
@@ -68,10 +72,12 @@ function updateAndDisplayWordSearch() {
     document.getElementById("tables").style.display = "block";
     let canvas = document.getElementById("word-search-canvas");
     let showKey = document.getElementById("show-key-checkbox").checked;
+    let textColor = document.getElementById("text-color-input").value;
     let fontSize = document.getElementById("font-size-input").value;
     let title = document.getElementById("title-input").value;
     let titleFontSize = document.getElementById("title-font-size-input").value;
-    drawWordSearchToCanvas(wordSearchTable, wordList, wordConfigurations, canvas, showKey, fontSize, title, titleFontSize);
+    let bgImage = document.getElementById("bg-img");
+    drawWordSearchToCanvas(wordSearchTable, untouchedWordList, wordConfigurations, canvas, showKey, textColor, fontSize, title, titleFontSize, bgImage, bgImageMode);
 }
 
 function downloadWordSearchImage() {
@@ -96,4 +102,29 @@ function displayErrors(errorList) {
 function hideOldErrors() {
     let errorListElement = document.getElementById("error-list");
     while (errorListElement.children.length > 0) errorListElement.children[0].remove();
+}
+
+function setBackgroundImage() {
+    let hiddenBgImageInput = document.getElementById("upload-bg-img-input");
+    hiddenBgImageInput.click();
+}
+
+function bgImageChosen() {
+    let hiddenBgImageInput = document.getElementById("upload-bg-img-input");
+    let bgImageElement = document.getElementById("bg-img");
+    if (typeof hiddenBgImageInput === "object" && hiddenBgImageInput.files.length > 0) {
+        bgImageElement.src = URL.createObjectURL(hiddenBgImageInput.files[0]);
+        bgImageElement.alt = bgImageElement.title = hiddenBgImageInput.files[0].name;
+    }
+}
+
+function removeBackgroundImage() {
+    let bgImageElement = document.getElementById("bg-img");
+    bgImageElement.src = "";
+    bgImageElement.alt = bgImageElement.title = "";
+}
+
+function changeImageMode() {
+    bgImageMode = (bgImageMode + 1) % bgImageModes.length;
+    document.getElementById("change-img-mode-btn").innerText = "Change image mode (" + bgImageModes[bgImageMode] + ")";
 }

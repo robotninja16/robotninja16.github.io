@@ -1,5 +1,6 @@
 let allowedCharacters = "";
 let wordList = [];
+let untouchedWordList = [];
 let wordConfigurations = [];
 let width = 10, height = 10;
 let enableDiagonals = false, enableUp = false, enableLeft = false;
@@ -12,13 +13,16 @@ function loadVariablesFromUser() {
     enableUp = document.getElementById("enable-up-box").checked;
     enableLeft = document.getElementById("enable-left-box").checked;
     wordList = [];
+    untouchedWordList = [];
     allowedCharacters = "";
     let inputs = document.querySelectorAll("#word-input-list input");
     for (let i = 0; i < inputs.length; i++) {
         if (inputs[i].type == "text" && !inputs[i].disabled && inputs[i].value != "") {
-            let upperCaseValue = inputs[i].value.toUpperCase();
-            wordList.push(upperCaseValue);
+            let upperCaseValue = inputs[i].value.toUpperCase().trim();
+            wordList.push(upperCaseValue.replace(' ', ""));
+            untouchedWordList.push(inputs[i].value.trim());
             for (let j = 0; j < upperCaseValue.length; j++) {
+                if (upperCaseValue[j] == ' ') continue;
                 if (allowedCharacters.indexOf(upperCaseValue[j]) == -1)
                     allowedCharacters += upperCaseValue[j];
             }
@@ -93,6 +97,8 @@ function generateWordSearch() {
 function doSafetyPreCheck(wordList) {
     let errorList = [];
     let reversedWords = [];
+    if (wordList.length == 0) return ["Can't generate a word search with no words! (Needs at least 2)"];
+    if (wordList.length < 2) errorList.push("Needs at least 2 words to generate.");
     for (let word of wordList) {
         let newWord = "";
         for (let char of word) {
@@ -101,6 +107,10 @@ function doSafetyPreCheck(wordList) {
         reversedWords.push(newWord);
     }
     for (let i = 0; i < wordList.length; i++) {
+        if (wordList[i].length > width)
+            errorList.push(`Can't generate. ${wordList[i]} is longer than the width of the word search.`);
+        if (wordList[i].length > height)
+            errorList.push(`Can't generate. ${wordList[i]} is longer than the height of the word search.`);
         for (let j = 0; j < wordList.length; j++) {
             if (i == j) continue;
             if (wordList[i] == wordList[j]) {
@@ -120,6 +130,23 @@ function doSafetyPreCheck(wordList) {
             if (wordList[i].indexOf(reversedWords[j]) > -1)
                 errorList.push(`Can't generate. ${wordList[i]} contains ${wordList[j]} backwards. (${reversedWords[j]})`);
         }
+        if (wordList[i].length <= 1) {
+            if (wordList[i].length == 0) {
+                errorList.push(`Word #${i} is completely empty!`);
+                continue;
+            }
+            errorList.push(`${wordList[i]} needs at least 2 letters -- one letter words don't work.`);
+            continue;
+        }
+        let firstLetter = wordList[i][0];
+        let allOneLetter = true;
+        for (let k = 0; k < wordList[i].length; k++) {
+            if (firstLetter != wordList[i][k]) {
+                allOneLetter = false;
+                break;
+            }
+        }
+        if (allOneLetter) errorList.push(`${wordList[i]} is all the same letter!`)
     }
     return errorList;
 }

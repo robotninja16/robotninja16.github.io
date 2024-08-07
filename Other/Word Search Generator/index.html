@@ -42,13 +42,16 @@
     </div>
     <h2>Word Search Generator</h2>
     <div id="generator">
-        <div><span>Title: </span><input id="title-input" type="text" value="Word Search"><span>Title Font Size:
-            </span><input id="title-font-size-input" type="number" value="60"></div>
+        <div><span>Title: </span><input id="title-input" type="text" value="Word Search"></div>
         <div>
             <span>Size: </span><input id="width-input" type="number" value="10"><span>×</span><input id="height-input"
                 type="number" value="10">
-            <span>Font Size: </span><input id="font-size-input" type="number" value="20">
         </div>
+        <div>
+            <span>Title Font Size: </span><input id="title-font-size-input" type="number" value="60" min="1">
+            <span>Font Size: </span><input id="font-size-input" type="number" value="20" min="1">
+        </div>
+        <div><span>Text color: </span><input id="text-color-input" type="color" value="#000000"></div>
         <div>
             <span>Enable diagonals</span><input id="enable-diagonals-box" type="checkbox">
             <span>Enable up</span><input id="enable-up-box" type="checkbox">
@@ -57,6 +60,16 @@
         <div class="spacing-below"><button onclick="removeAllEntries();">Remove All</button></div>
         <div style="display:inline-block" id="word-input-list"><input type="text"
                 onkeydown="wordListInput_keyPressed(this, event);" oninput="setAllCaps(this);"></div>
+        <div>
+            <button onclick="setBackgroundImage()">Set background image (optional)</button>
+            <button onclick="removeBackgroundImage()">Remove background image</button>
+            <button onclick="changeImageMode()" id="change-img-mode-btn">Change image mode (normal size)</button>
+        </div>
+        <div>
+            <input id="upload-bg-img-input" style="display:none;" type="file" accept=".png,.jpg,.webp"
+                oninput="bgImageChosen()">
+            <img id="bg-img">
+        </div>
         <div><button id="generate-word-search-btn" onclick="generateWordSearch();">Generate!</button></div>
         <div id="error-list"></div>
     </div>
