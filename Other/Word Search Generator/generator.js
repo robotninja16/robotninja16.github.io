@@ -19,7 +19,7 @@ function loadVariablesFromUser() {
     for (let i = 0; i < inputs.length; i++) {
         if (inputs[i].type == "text" && !inputs[i].disabled && inputs[i].value != "") {
             let upperCaseValue = inputs[i].value.toUpperCase().trim();
-            wordList.push(upperCaseValue.replace(' ', ""));
+            wordList.push(upperCaseValue.replaceAll(' ', ""));
             untouchedWordList.push(inputs[i].value.trim());
             for (let j = 0; j < upperCaseValue.length; j++) {
                 if (upperCaseValue[j] == ' ') continue;
