@@ -206,7 +206,7 @@ function tryRemoveAllFalseInstancesOfWord(word, realWordConfiguration) {
                         if (!wordSearchTable[y + (direction.y * i)][x + (direction.x * i)].isLocked) foundUnlockedCharacter = true;
                         if (word[i] != wordSearchTable[y + (direction.y * i)][x + (direction.x * i)].content) {
                             break;
-                        } else if (i == word.length - 1) {
+                        } else if (!wordSearchTable[y][x].isLocked && i == word.length - 1) {
                             foundSingleFalseWord = true;
                             returnData.redoFalseWordSearch = true;
                             if (!foundUnlockedCharacter) {
