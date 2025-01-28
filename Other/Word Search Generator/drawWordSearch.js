@@ -1,15 +1,15 @@
-function drawWordSearchToCanvas(table, untouchedWordList, wordConfigurations, canvas, showKey, textColor, fontSize, title, titleFontSize, bgImg, bgImgMode) {
+function drawWordSearchToCanvas(table, untouchedWordList, wordConfigurations, canvas, showKey, textColor, font, title, titleFont, listFont, bgImg, bgImgMode) {
     let ctx = canvas.getContext('2d');
     ctx.imageSmoothingQuality = 'high';
     ctx.strokeStyle = 'transparent';
     drawBackground(canvas, ctx, bgImg, bgImgMode);
-    let titleCanvas = makeTitleImg(title, titleFontSize, textColor);
+    let titleCanvas = makeTitleImg(title, titleFont, textColor);
     ctx.drawImage(titleCanvas, 0, 0);
     titleCanvas.remove();
-    let mainSectionCanvas = makeMainSectionImg(table, untouchedWordList, wordConfigurations, showKey, textColor, fontSize);
+    let mainSectionCanvas = makeMainSectionImg(table, untouchedWordList, wordConfigurations, showKey, textColor, font);
     ctx.drawImage(mainSectionCanvas, 0, 82);
     mainSectionCanvas.remove();
-    let untouchedWordListCanvas = makeWordListImg(untouchedWordList, textColor);
+    let untouchedWordListCanvas = makeWordListImg(untouchedWordList, textColor, listFont);
     ctx.drawImage(untouchedWordListCanvas, 0, 898);
     untouchedWordListCanvas.remove();
 }
@@ -52,24 +52,25 @@ function drawBackground(canvas, ctx, bgImg, bgImgMode) {
     }
     ctx.drawImage(bgImg, (canvas.width - newWidth) / 2, (canvas.height - newHeight) / 2, newWidth, newHeight);
 }
-function makeTitleImg(title, titleFontSize, textColor) {
+function makeTitleImg(title, titleFont, textColor) {
     let canvas = document.createElement('canvas');
     canvas.width = 816; canvas.height = 82;
     let ctx = canvas.getContext('2d');
     ctx.fillStyle = textColor;
     ctx.textAlign = 'center';
-    ctx.font = titleFontSize + 'px sans-serif';
+    ctx.font = titleFont;
     ctx.textBaseline = 'top';
     ctx.fillText(title, canvas.width / 2, 5);
     return canvas;
 }
-function makeMainSectionImg(table, untouchedWordList, wordConfigurations, showKey, textColor, fontSize) {
+function makeMainSectionImg(table, untouchedWordList, wordConfigurations, showKey, textColor, font) {
     let canvas = document.createElement('canvas');
     canvas.width = 816; canvas.height = 816;
     let ctx = canvas.getContext('2d');
     ctx.textBaseline = 'middle';
     ctx.textAlign = 'left';
-    ctx.font = fontSize + 'px sans-serif';
+    ctx.font = font;
+    let fontSize = parseInt(font.split("px")[0]);
     for (let y = 0; y < table.length; y++) {
         for (let x = 0; x < table[y].length; x++) {
             let centerX = ((x - (table[y].length / 2) + 0.5) * fontSize) + (canvas.width / 2),
@@ -84,11 +85,11 @@ function makeMainSectionImg(table, untouchedWordList, wordConfigurations, showKe
     }
     return canvas;
 }
-function makeWordListImg(untouchedWordList, textColor) {
+function makeWordListImg(untouchedWordList, textColor, font) {
     let canvas = document.createElement('canvas');
     canvas.width = 816; canvas.height = 158;
     let ctx = canvas.getContext('2d');
-    ctx.font = '20px sans-serif';
+    ctx.font = font;
     ctx.fillStyle = textColor;
     ctx.textBaseline = 'top';
     ctx.textAlign = 'center';

@@ -56,8 +56,8 @@ div { color: white; }
         0px 0px 0px black,
         0px 0px 0px black;
 }
-a:hover { z-index: 1; transition: z-index 0s; }
-a:hover .menu-button {
+a:hover:not(.inline-text-link) { z-index: 1; transition: z-index 0s; }
+a:hover:not(.inline-text-link) .menu-button {
     border-radius: 25px;
     background-color: #222222;
     box-shadow:
@@ -71,8 +71,8 @@ a:hover .menu-button {
         0px -4px 3px black;
     transition: background 0.5s, border-radius 0.5s, box-shadow 0.5s;
 }
-a:not(hover) { z-index: -1; transition: z-index 2s; }
-a:not(hover) .menu-button {
+a:not(hover, .inline-text-link) { z-index: -1; transition: z-index 2s; }
+a:not(hover, .inline-text-link) .menu-button {
     border-radius: 0px;
     background-color: rgb(0, 46, 105);
     box-shadow:
@@ -106,7 +106,7 @@ a:not(hover) .menu-button {
 .menu-button img { border-radius: 100%; background-color: #4d97ff; width: 55px; height: 55px; }
 .menu-button:hover img { background-color: white; transition: background-color 0.5s; }
 .menu-button:not(hover) img { background-color: #4d97ff; transition: background-color 0.5s; }
-a { text-decoration: none; }
+a:not(.inline-text-link) { text-decoration: none; }
 .menu-link {
     width: 25%; border-radius: 0px;
     height: 100px;

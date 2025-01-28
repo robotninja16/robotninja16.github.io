@@ -74,10 +74,14 @@ function updateAndDisplayWordSearch() {
     let showKey = document.getElementById("show-key-checkbox").checked;
     let textColor = document.getElementById("text-color-input").value;
     let fontSize = document.getElementById("font-size-input").value;
+    let font = fontSize + "px " + document.getElementById("font-family-input").value;
     let title = document.getElementById("title-input").value;
     let titleFontSize = document.getElementById("title-font-size-input").value;
+    let titleFont = titleFontSize + "px " + document.getElementById("title-font-family-input").value;
+    let wordListFontSize = document.getElementById("list-font-size-input").value;
+    let listFont = wordListFontSize + "px " + document.getElementById("list-font-family-input").value;
     let bgImage = document.getElementById("bg-img");
-    drawWordSearchToCanvas(wordSearchTable, untouchedWordList, wordConfigurations, canvas, showKey, textColor, fontSize, title, titleFontSize, bgImage, bgImageMode);
+    drawWordSearchToCanvas(wordSearchTable, untouchedWordList, wordConfigurations, canvas, showKey, textColor, font, title, titleFont, listFont, bgImage, bgImageMode);
 }
 
 function downloadWordSearchImage() {

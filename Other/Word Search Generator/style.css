@@ -1,8 +1,12 @@
+a.inline-text-link {
+    color: lightskyblue;
+}
+
 html, body {
     background-color: rgb(0, 25, 50);
     text-align: center;
 }
-:not(.flex *, .menu) {
+:not(.flex *, .menu, .inline-text-link) {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -26,7 +30,7 @@ input[type="number"] {
     border: 2px solid white;
     padding: 5px;
 }
-button:not(.flex *, .menu *), a:not(.flex *, .menu *) {
+button:not(.flex *, .menu *), a:not(.flex *, .menu *, .inline-text-link) {
     background-color: rgb(26, 81, 136);
     border: 1px solid white;
     border-radius: 10px;
@@ -36,7 +40,7 @@ button:not(.flex *, .menu *), a:not(.flex *, .menu *) {
 .spacing-below {
     margin-bottom: 10px;
 }
-body *:not(.flex *, .menu, .flex *, .menu *) {
+body *:not(.flex *, .menu, .flex *, .menu *, .inline-text-link) {
     margin: 3px;
 }
 #generate-word-search-btn {
