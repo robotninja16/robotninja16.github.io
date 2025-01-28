@@ -17,6 +17,9 @@ input {
     padding: 0px 5px 0px 5px;
     text-align: center;
 }
+input:invalid {
+    color: lightcoral;
+}
 input[type="number"] {
     width: 32px;
     text-align: left;
