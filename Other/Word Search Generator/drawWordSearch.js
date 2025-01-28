@@ -99,15 +99,15 @@ function makeWordListImg(untouchedWordList, textColor) {
     let columnCount = Math.min(Math.floor((canvas.width) / columnWidth), untouchedWordList.length);
     columnWidth = canvas.width / columnCount;
     let lastRowColumnCount = untouchedWordList.length % columnCount;
-    let lastRowColumnWidth = canvas.width / lastRowColumnCount;
+    let lastRowIndicator = untouchedWordList.length - lastRowColumnCount;
+    let lastRowOffset = (columnCount - lastRowColumnCount) * (columnWidth / 2);
     for (let i = 0; i < untouchedWordList.length; i++) {
         let columnNumber = i % columnCount;
         let rowNumber = Math.floor(i / columnCount);
-        let x = (columnNumber * columnWidth) + (canvas.width / (2 * columnCount));
+        let x = (columnNumber * columnWidth) + (columnWidth / 2);
         let y = rowNumber * 20;
-        let lastRowIndicator = untouchedWordList.length - lastRowColumnCount;
         if (i >= lastRowIndicator)
-            x = (columnNumber * lastRowColumnWidth) + (canvas.width / (2 * lastRowColumnCount));
+            x += lastRowOffset;
         ctx.fillText(untouchedWordList[i], x, y);
     }
     return canvas;
