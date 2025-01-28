@@ -98,11 +98,16 @@ function makeWordListImg(untouchedWordList, textColor) {
     }
     let columnCount = Math.min(Math.floor((canvas.width) / columnWidth), untouchedWordList.length);
     columnWidth = canvas.width / columnCount;
+    let lastRowColumnCount = untouchedWordList.length % columnCount;
+    let lastRowColumnWidth = canvas.width / lastRowColumnCount;
     for (let i = 0; i < untouchedWordList.length; i++) {
         let columnNumber = i % columnCount;
         let rowNumber = Math.floor(i / columnCount);
         let x = (columnNumber * columnWidth) + (canvas.width / (2 * columnCount));
         let y = rowNumber * 20;
+        let lastRowIndicator = untouchedWordList.length - lastRowColumnCount;
+        if (i >= lastRowIndicator)
+            x = (columnNumber * lastRowColumnWidth) + (canvas.width / (2 * lastRowColumnCount));
         ctx.fillText(untouchedWordList[i], x, y);
     }
     return canvas;
