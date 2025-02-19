@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Generator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <script src="bgimage.js"></script>
+    <script src="downloadimg.js"></script>
+    <script src="drawMaze.js"></script>
+    <script src="generator.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="flex menu">
+        <a href="../../" class="menu-link">
+            <div class="menu-button">
+                <span style="font-size:30px;font-family: Arial, Helvetica, sans-serif;">
+                    <div class="title">Home<br></div><i class="material-icons" style="font-size:50px;">home</i>
+                </span><br>
+            </div>
+        </a>
+        <a href="../../Games/" class="menu-link">
+            <div class="menu-button">
+                <span style="font-size:30px;font-family: Arial, Helvetica, sans-serif;">
+                    <div class="title">Games</div><i class="material-icons" style="font-size:50px;">videogame_asset</i>
+                </span>
+            </div>
+        </a>
+        <a href="../../Tutorials/" class="menu-link">
+            <div class="menu-button">
+                <span style="font-size:30px;font-family: Arial, Helvetica, sans-serif;">
+                    <div class="title">Tutorials</div><i class="material-icons"
+                        style="font-size:40px;">import_contacts</i>
+                </span><br>
+            </div>
+        </a>
+        <a href="../../Other/" class="menu-link">
+            <div class="menu-button">
+                <span style="font-size:30px;font-family: Arial, Helvetica, sans-serif;">
+                    <div class="title">Other<br></div><i class="material-icons" style="font-size:50px;">more_horiz</i>
+                </span><br>
+            </div>
+        </a>
+    </div>
+    <h2>Maze Generator</h2>
+    <div id="generator">
+        <progress id="loading-bar" style="display: none;"></progress>
+        <div><span>Title: </span><input id="title-input" type="text"></div>
+        <div>
+            <span>Title Font: </span><input id="title-font-family-input" type="text" value="sans-serif"
+                pattern="([a-zA-Z]|\s|-)+">
+            <span>Title Font Size: </span><input id="title-font-size-input" type="number" value="60" min="1">
+            <span>Title Color: </span><input id="title-font-color-input" type="color" value="#000000">
+        </div>
+        <div>Some font names can be found <a href="https://web.mit.edu/jmorzins/www/fonts.html" class="inline-text-link"
+                target="_blank">here</a>.</div>
+        <div class="mechanical-only"><span>Maze Size: </span><input id="maze-width-input" type="number" min="3"
+                value="8" onchange="updateLocationsTable()"><span>×</span><input id="maze-height-input" type="number"
+                min="3" value="8" onchange="updateLocationsTable()"></div>
+        <div class="mechanical-only"><button onclick="setStart();">Set start</button><button onclick="setEnd();">Set end</button></div>
+        <div class="mechanical-only" id="start-end-locations-table"></div>
+        <div>
+            <span>Start color: </span><input id="maze-startcolor-input" type="color" value="#000000">
+            <span>End color: </span><input id="maze-endcolor-input" type="color" value="#000000">
+        </div>
+        <div><span>Tile Size: </span><input id="maze-tilesize-input" type="number" value="50"></div>
+        <div>
+            <span>Wall Thickness:</span><input id="maze-strokewidth-input" type="number" value="4">
+            <span>Wall Color:</span><input id="maze-strokecolor-input" type="color" value="#000000">
+        </div>
+        <div>
+            <button onclick="setBackgroundImage()">Set background image (optional)</button>
+            <button onclick="removeBackgroundImage()">Remove background image</button>
+            <button onclick="changeImageMode()" id="change-img-mode-btn">Change image mode (normal size)</button>
+        </div>
+        <div>
+            <input id="upload-bg-img-input" style="display:none;" type="file" accept=".png,.jpg,.webp"
+                oninput="bgImageChosen()">
+            <img id="bg-img">
+        </div>
+        <br class="mechanical-only"><div class="mechanical-only"><button id="generate-maze-btn" onclick="generateAndDrawMaze();">Generate!</button>
+        </div>
+        <div class="visual-only"><button onclick="updateVisualsAndDrawMaze();">View updated →</button></div>
+    </div>
+    <div id="maze" style="display:none;">
+        <div>
+            <button onclick="showGenerator();">← Generate another</button>
+            <button onclick="showVisualEditor();">← Change visuals</button>
+        </div>
+        <div>
+            <span>Show path</span><input type="checkbox" id="toggle-show-solution-checkbox" onchange="updateVisualsAndDrawMaze()">
+            <button id="download-img-btn" onclick="downloadMazeImage();">Download</button>
+        </div>
+        <canvas id="maze-canvas" width="816" height="1056">
+    </div>
+</body>
+
+</html>

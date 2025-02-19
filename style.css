@@ -43,6 +43,8 @@ div { color: white; }
     color: white;
 }
 .flex { display: flex; justify-content: center; }
+.horizontal-flex { flex-flow: row wrap; }
+.evenly-spaced-flex { justify-content: space-evenly; }
 .menu-button {
     height: 100px;
     text-align: center; vertical-align: auto; user-select: none;
@@ -56,8 +58,8 @@ div { color: white; }
         0px 0px 0px black,
         0px 0px 0px black;
 }
-a:hover:not(.inline-text-link) { z-index: 1; transition: z-index 0s; }
-a:hover:not(.inline-text-link) .menu-button {
+.menu-link:hover:not(.inline-text-link) { z-index: 1; transition: z-index 0s; }
+.menu-link:hover:not(.inline-text-link) .menu-button {
     border-radius: 25px;
     background-color: #222222;
     box-shadow:
@@ -71,8 +73,8 @@ a:hover:not(.inline-text-link) .menu-button {
         0px -4px 3px black;
     transition: background 0.5s, border-radius 0.5s, box-shadow 0.5s;
 }
-a:not(hover, .inline-text-link) { z-index: -1; transition: z-index 2s; }
-a:not(hover, .inline-text-link) .menu-button {
+.menu-link:not(hover, .inline-text-link) { z-index: -1; transition: z-index 2s; }
+.menu-link:not(hover, .inline-text-link) .menu-button {
     border-radius: 0px;
     background-color: rgb(0, 46, 105);
     box-shadow:
@@ -112,42 +114,34 @@ a:not(.inline-text-link) { text-decoration: none; }
     height: 100px;
 }
 p { font-size: 17px; }
-@media screen and (max-width: 910px) {
-    .subtext-scratch {
-        visibility: hidden;
-        position: absolute;
-    }
-}
 @media screen and (max-width: 740px) {
     .title {
         visibility: hidden;
         position: absolute;
     }
 }
-h3, p { color: white; text-align: center; }
+h1, h2, h3, h4, h5, h6, p { color: white; text-align: center; }
 iframe { width: 100%; height: 600px; }
 .link {
     display: flex;
-    position: absolute;
     width: 18%; height: 100px;
     border-radius: 30px;
     font: 20px Arial, Helvetica, sans-serif;
     text-decoration: none;
     color: white;
-    z-index: 5;
     user-select: none;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    transition: box-shadow 0.5s, background-color 0.5s !important;
 }
 .link:hover {
     box-shadow: 0px 4px 4px black, -4px 0px 4px black, 0px -4px 4px black, 4px 0px 4px black;
     background-color: #0055FF;
-    transition: box-shadow 0.5s, background-color 0.5s;
 }
 .link:not(hover) {
     box-shadow: 0px 0px 0px black, 0px 0px 0px black, 0px 0px 0px black, 0px 0px 0px black;
     background-color: #0022FF;
-    transition: box-shadow 0.5s, background-color 0.5s;
 }
 .item0 { left: 1%; }
 .item1 { left: 21%; }

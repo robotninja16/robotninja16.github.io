@@ -1,0 +1,111 @@
+a.inline-text-link {
+    color: lightskyblue;
+}
+
+html, body {
+    background-color: rgb(0, 25, 50);
+    text-align: center;
+}
+:not(.flex *, .menu, .inline-text-link) {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+input {
+    background-color: rgb(25, 50, 75);
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+}
+input:invalid {
+    color: lightcoral;
+}
+input[type="number"] {
+    width: 32px;
+    text-align: left;
+}
+#maze-input-list {
+    max-height: 300px;
+    overflow-y: scroll;
+    max-width: 210px;
+    width: -moz-fit-content;
+    width: fit-content;
+    border: 2px solid white;
+    padding: 5px;
+}
+button:not(.flex *, .menu *), a:not(.flex *, .menu *, .inline-text-link) {
+    background-color: rgb(26, 81, 136);
+    border: 1px solid white;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 0px 5px 0px 5px;
+}
+.spacing-below {
+    margin-bottom: 10px;
+}
+body *:not(.flex *, .menu, .flex *, .menu *, .inline-text-link) {
+    margin: 3px;
+}
+#generate-maze-btn {
+    font-size: xx-large;
+    border-radius: 20px;
+    background-color: rgb(26, 151, 43);
+}
+.maze-highlighted-path {
+    background-color: rgb(131, 130, 54);
+}
+#download-img-btn {
+    background-color: rgb(26, 151, 43);
+}
+#error-list * {
+    color: lightcoral;
+}
+
+#loading-bar {
+    accent-color: lightgreen;
+    margin: 3px;
+    width: 75%;
+    height: 30px;
+}
+#start-end-locations-table {
+    display: flex;
+    flex-direction: column;
+}
+#start-end-locations-table>div {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin: 0px;
+}
+@media (max-width: 500px) {
+    #start-end-locations-table * {
+        font-size: 10px;
+    }
+}
+#start-end-locations-table>div>span {
+    width: 7vw; height: 7vw;
+    max-width: 50px; max-height: 50px;
+    color: black;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    display: inline-flex;
+    background-color: white;
+    border-radius: 5px;
+    transition: ease-in-out 0.25s background-color, ease-in-out 0.25s box-shadow;
+}
+#start-end-locations-table>div>span:hover {
+    background-color: skyblue;
+    box-shadow: -1px 1px white, 1px 1px white, 1px -1px white, -1px -1px white;
+}
+#start-end-locations-table>div>span.selected {
+    background-color: lightgreen;
+}
+
+.editing-visuals .mechanical-only {
+    display: none;
+}
+.visual-only:not(.editing-visuals .visual-only) {
+    display: none;
+}
