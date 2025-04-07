@@ -6,7 +6,7 @@ function drawWordSearchToCanvas(table, untouchedWordList, wordConfigurations, ca
     let titleCanvas = makeTitleImg(title, titleFont, textColor);
     ctx.drawImage(titleCanvas, 0, 0);
     titleCanvas.remove();
-    let mainSectionCanvas = makeMainSectionImg(table, untouchedWordList, wordConfigurations, showKey, textColor, font);
+    let mainSectionCanvas = drawMainSection(table, untouchedWordList, wordConfigurations, showKey, textColor, font);
     ctx.drawImage(mainSectionCanvas, 0, 82);
     mainSectionCanvas.remove();
     let untouchedWordListCanvas = makeWordListImg(untouchedWordList, textColor, listFont);
@@ -16,8 +16,6 @@ function drawWordSearchToCanvas(table, untouchedWordList, wordConfigurations, ca
 function drawBackground(canvas, ctx, bgImg, bgImgMode) {
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    //ctx.fillStyle = 'green';
-    //ctx.fillRect(0, 0, canvas.width / 2, canvas.height);
     if (!bgImg || !bgImg.src || bgImg.src == "") return;
     let newWidth = bgImg.width;
     let newHeight = bgImg.height;
@@ -63,7 +61,7 @@ function makeTitleImg(title, titleFont, textColor) {
     ctx.fillText(title, canvas.width / 2, 5);
     return canvas;
 }
-function makeMainSectionImg(table, untouchedWordList, wordConfigurations, showKey, textColor, font) {
+function drawMainSection(table, untouchedWordList, wordConfigurations, showKey, textColor, font) {
     let canvas = document.createElement('canvas');
     canvas.width = 816; canvas.height = 816;
     let ctx = canvas.getContext('2d');
