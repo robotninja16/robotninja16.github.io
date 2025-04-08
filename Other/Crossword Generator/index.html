@@ -106,7 +106,7 @@
         <div>
             <span>Show solution</span><input type="checkbox" id="toggle-show-solution-checkbox"
                 onchange="updateAndDisplayCrossword()">
-            <button id="download-img-btn" onclick="downloadImage(this, 'crossword');">Download</button>
+            <button id="download-img-btn" onclick="downloadImage(document.getElementById('crossword-canvas'), 'crossword');">Download</button>
         </div>
         <canvas id="crossword-canvas" width="816" height="1056">
     </div>
