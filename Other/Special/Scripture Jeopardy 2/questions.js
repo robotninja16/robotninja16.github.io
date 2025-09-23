@@ -151,6 +151,6 @@ let questions = [
     }
 ];
 let finalJeopardy = {
-    question: 'This king saw that he was going to die, but because he had been faithful, the Lord lengthened his life 15 years and turned the sun back 10 degrees for a sign.',
-    answer: 'Hezekiah'
+    question: 'This is the longest chapter (by verse count) in the Standard Works. ',
+    answer: 'Psalm 119'
 };
