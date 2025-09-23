@@ -1,24 +1,24 @@
 let questions = [
     {
         "question_200": {
-            question: 'Alma said: "...for the Lord God hath made them manifest unto me by his Holy Spirit; and this is the spirit of ______ which is in me."',
+            question: 'This is the way that God communicates to us. Alma said: "...for the Lord God hath made them manifest unto me by his Holy Spirit; and this is the spirit of ______ which is in me."',
             answer: 'Revelation',
             reference: 'Alma 5:46'
         },
         "question_400": {
-            question: '"For his word ye shall ____, as if from mine own mouth..."',
+            question: 'The Lord spoke to the early saints, "For his [the prophet\'s] word ye shall ____, as if from mine own mouth..."',
             answer: 'Receive',
             reference: 'D&C 21:5'
         },
         "question_600": {
-            question: '"And a book of _____ was kept ... in the language of Adam"',
-            answer: 'Remembrance',
-            reference: 'Moses 6:5'
-        },
-        "question_800": {
             question: 'Paul the Apostle wrote to the Thessalonians, telling them to "____ evermore"',
             answer: 'Rejoice',
             reference: '1 Thessalonians 5:16'
+        },
+        "question_800": {
+            question: 'We read that "a book of _____ was kept ... in the language of Adam" so the people would not forget their God.',
+            answer: 'Remembrance',
+            reference: 'Moses 6:5'
         },
         "question_1000": {
             question: 'Under the reign of this king, the kingdom of Israel was divided into two nations.',
@@ -54,20 +54,20 @@ let questions = [
     },
     {
         "question_200": {
-            question: 'These were the three sons of Noah.',
-            answer: 'Ham, Shem, and Japheth',
+            question: 'This man was the father of Joseph Smith, the first latter-day prophet.',
+            answer: 'Joseph Smith Sr.'
         },
         "question_400": {
-            question: 'This was the name of Abraham\'s father',
-            answer: 'Terah'
-        },
-        "question_600": {
             question: 'This man was Jacob\'s son in the Book of Mormon',
             answer: 'Enos'
         },
+        "question_600": {
+            question: 'These were the three sons of Noah.',
+            answer: 'Ham, Shem, and Japheth',
+        },
         "question_800": {
-            question: 'This man was the father of Joseph Smith, the first latter-day prophet.',
-            answer: 'Joseph Smith Sr.'
+            question: 'This was the name of Abraham\'s father',
+            answer: 'Terah'
         },
         "question_1000": {
             question: 'In the New Testament, this man\'s seven sons tried to cast out an evil spirit but lacked the proper authority. They were overcome and driven away.',
@@ -76,13 +76,13 @@ let questions = [
     },
     {
         "question_200": {
-            question: '"Deseret" is a Book of Mormon word meaning...?',
-            answer: 'A honey bee'
+            question: 'At various times, Jesus spoke of how merciful He had been to His people, saying, "how often would I have gathered thy children together, even as a ___ gathereth her ________ under her wings, and ye would not!"',
+            answer: 'Hen, chickens',
+            reference: 'Matthew 23:37,3 Nephi 10:5,D&C 43:24'
         },
         "question_400": {
-            question: 'This prophet wrote of the destruction of Babylon, saying: "...their houses shall be full of doleful creatures; and owls shall dwell there, and satyrs shall dance there. And the wild beasts of the islands shall cry in their desolate houses, and dragons in their pleasant palaces: and her time is near to come..."',
-            answer: 'Isaiah',
-            reference: 'Isaiah 13:21-22'
+            question: '"Deseret" is a Book of Mormon word meaning...?',
+            answer: 'A honey bee'
         },
         "question_600": {
             question: 'This book in the Book of Mormon mentioned elephants, cureloms, and cummoms in the promised land.',
@@ -94,9 +94,9 @@ let questions = [
             answer: 'Quail'
         },
         "question_1000": {
-            question: 'At various times, Jesus spoke of how merciful He had been to His people, saying, "how often would I have gathered thy children together, even as a ___ gathereth her chickens under her _____, and ye would not!"',
-            answer: 'Hen, chicken',
-            reference: 'Matthew 23:37,3 Nephi 10:5,D&C 43:24'
+            question: 'This prophet wrote of the destruction of Babylon, saying: "...their houses shall be full of doleful creatures; and owls shall dwell there, and satyrs shall dance there. And the wild beasts of the islands shall cry in their desolate houses, and dragons in their pleasant palaces: and her time is near to come..."',
+            answer: 'Isaiah',
+            reference: 'Isaiah 13:21-22'
         }
     },
     {
@@ -114,12 +114,12 @@ let questions = [
             answer: 'Matthew 5:16'
         },
         "question_800": {
-            question: 'This man was the leader of the Israelite army that fought against the Midianites. With only a few hundred people, they infiltrated the enemy camp at night, blew their trumpets, and revealed their lamps, causing confusion among the Midianites, who turned on each other in the chaos.',
-            answer: 'Gideon'
-        },
-        "question_1000": {
             question: 'These two prophets left to preach among the Lamanites and were cast into prison. As the Lamanites were about to kill these men, a great light shone around them like a pillar of fire, and the ground shook. Ultimately, most of the Lamanites were converted.',
             answer: 'Nephi and Lehi'
+        },
+        "question_1000": {
+            question: 'This man was the leader of the Israelite army that fought against the Midianites. With only a few hundred people, they infiltrated the enemy camp at night, blew their trumpets, and revealed their lamps, causing confusion among the Midianites, who turned on each other in the chaos.',
+            answer: 'Gideon'
         }
     },
     {
