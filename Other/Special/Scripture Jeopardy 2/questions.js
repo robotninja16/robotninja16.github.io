@@ -1,145 +1,152 @@
 let questions = [
     {
         "question_200": {
-            question: 'The two seerstones used to translate the Book of Mormon.',
-            answer: 'Urim and Thummim'
+            question: 'Alma said: "...for the Lord God hath made them manifest unto me by his Holy Spirit; and this is the spirit of ______ which is in me."',
+            answer: 'Revelation',
+            reference: 'Alma 5:46'
         },
         "question_400": {
-            question: 'This man melted 16 “white and clear” stones that became lights when the finger of the Lord touched them.',
-            answer: 'The brother of Jared/Mahonri Moriancumer',
-            reference: 'Ether 3:1'
+            question: '"For his word ye shall ____, as if from mine own mouth..."',
+            answer: 'Receive',
+            reference: 'D&C 21:5'
         },
         "question_600": {
-            question: 'This man was gathering sticks when a snake bit him. At first, the people thought he had done wrong to deserve this punishment, but when this man was unharmed, they claimed that this man could be a god.',
-            answer: 'Paul',
-            dailyDouble: true
+            question: '"And a book of _____ was kept ... in the language of Adam"',
+            answer: 'Remembrance',
+            reference: 'Moses 6:5'
         },
         "question_800": {
-            question: 'This man broke a rock and caused water to flow out of it.',
-            answer: 'Moses'
+            question: 'Paul the Apostle wrote to the Thessalonians, telling them to "____ evermore"',
+            answer: 'Rejoice',
+            reference: '1 Thessalonians 5:16'
         },
         "question_1000": {
-            question: 'This prophet recorded a revelation from the Lord that the stick of Joseph and the stick of Judah would be as one stick, referring to the Book of Mormon (Joseph’s stick) and the Bible (Judah’s stick).',
-            answer: 'Ezekiel'
+            question: 'Under the reign of this king, the kingdom of Israel was divided into two nations.',
+            answer: 'Rehoboam'
         }
     },
     {
         "question_200": {
-            question: 'Early in Jesus’ mortal ministry, He and His disciples were on a boat. A storm came and frightened the disciples, who awoke the Savior. Jesus said these words and calmed the storm.',
-            answer: '“Peace, be still”'
+            question: 'Lehi described this fruit as being "sweet, above all that [he] ever before tasted."',
+            answer: 'The fruit of the tree of life',
+            reference: '1 Nephi 8:11'
         },
         "question_400": {
-            question: 'In the book of 3rd Nephi, tempests, earthquakes, fires, and darkness covered the land for 3 days after this event.',
-            answer: 'The crucifixion of Jesus Christ'
+            question: 'This food was described as being sweet "like wafers made with honey" and was miraculously given to the Israelites in the wilderness.',
+            answer: 'Manna',
+            reference: 'Exodus 16:31'
         },
         "question_600": {
-            question: 'This man went on a ship headed to the land of Tarshish. Because this man was disobedient, the Lord sent a great storm. This man explained his situation to the others on the boat, and they threw him into the sea so they could survive through the storm.',
-            answer: 'Jonah'
+            question: 'This prophet wrote: "Woe unto them that call evil good, and good evil; that put darkness for light, and light for darkness; that put bitter for sweet, and sweet for bitter!"',
+            answer: 'Isaiah',
+            reference: 'Isaiah 5:20'
         },
         "question_800": {
-            question: 'These two men were taught by their father that if they built their foundation upon Christ, they would be able to withstand the devil’s winds, hail, and mighty storms.',
-            answer: 'Nephi and Lehi, the sons of Helaman'
+            question: 'This man ate a book that was "sweet like honey" but "as soon as [he] had eaten it, [his] belly was bitter."',
+            answer: 'John the Revelator',
+            reference: 'Revelation 10:10'
         },
         "question_1000": {
-            question: 'This prophet wrote that “the Lord hath his way in the whirlwind and in the storm, and the clouds are the dust of his feet”, but despite His great power, “The Lord is good, a strong hold in the day of trouble; and he knoweth them that trust in him.”',
-            answer: 'Nahum',
-            reference: 'Nahum 1:3,7'
+            question: 'Samson gave this riddle to the Philistines: "Out of the eater came forth meat, and out of the strong came forth sweetness", referring to a lion he had killed and later found this sweet food in its carcass.',
+            answer: 'Honey',
+            reference: 'Judges 14:14'
         }
     },
     {
         "question_200": {
-            question: 'What hymn is this?',
-            media: '<audio controls><source src="The Spirit of God.mp3"></audio>',
-            answer: 'The Spirit of God'
+            question: 'These were the three sons of Noah.',
+            answer: 'Ham, Shem, and Japheth',
         },
         "question_400": {
-            question: 'What hymn is this?',
-            media: '<audio controls><source src="I Know That My Redeemer Lives.mp3"></audio>',
-            answer: 'I Know That My Redeemer Lives'
+            question: 'This was the name of Abraham\'s father',
+            answer: 'Terah'
         },
         "question_600": {
-            question: 'What hymn is this?',
-            media: '<audio controls><source src="Dear to the Heart of the Shepherd.mp3"></audio>',
-            answer: 'Dear to the Heart of the Shepherd'
+            question: 'This man was Jacob\'s son in the Book of Mormon',
+            answer: 'Enos'
         },
         "question_800": {
-            question: 'What hymn is this?',
-            media: '<audio controls><source src="Come, Hear the Word the Lord Has Spoken.mp3"></audio>',
-            answer: 'Come, Hear the Word the Lord Has Spoken'
+            question: 'This man was the father of Joseph Smith, the first latter-day prophet.',
+            answer: 'Joseph Smith Sr.'
         },
         "question_1000": {
-            question: 'What hymn is this?',
-            media: '<audio controls><source src="Rock of Ages.mp3"></audio>',
-            answer: 'Rock of Ages'
+            question: 'In the New Testament, this man\'s seven sons tried to cast out an evil spirit but lacked the proper authority. They were overcome and driven away.',
+            answer: 'Sceva'
         }
     },
     {
         "question_200": {
-            question: 'Plates of ____ serpent',
-            answer: 'brass'
+            question: '"Deseret" is a Book of Mormon word meaning...?',
+            answer: 'A honey bee'
         },
         "question_400": {
-            question: 'King ____’s Ark',
-            answer: 'Noah'
+            question: 'This prophet wrote of the destruction of Babylon, saying: "...their houses shall be full of doleful creatures; and owls shall dwell there, and satyrs shall dance there. And the wild beasts of the islands shall cry in their desolate houses, and dragons in their pleasant palaces: and her time is near to come..."',
+            answer: 'Isaiah',
+            reference: 'Isaiah 13:21-22'
         },
         "question_600": {
-            question: 'Mount of ____ tree',
-            answer: 'Olive[s]'
+            question: 'This book in the Book of Mormon mentioned elephants, cureloms, and cummoms in the promised land.',
+            answer: 'Ether',
+            reference: 'Ether 9:19'
         },
         "question_800": {
-            question: 'Look to God and ____ by faith',
-            answer: 'live'
+            question: 'When the people of Israel complained about having only manna to eat, God sent this animal as meat, and many quickly became sick from eating it.',
+            answer: 'Quail'
         },
         "question_1000": {
-            question: 'Lot’s wife became a pillar of ____ of the earth',
-            answer: 'salt'
+            question: 'At various times, Jesus spoke of how merciful He had been to His people, saying, "how often would I have gathered thy children together, even as a ___ gathereth her chickens under her _____, and ye would not!"',
+            answer: 'Hen, chicken',
+            reference: 'Matthew 23:37,3 Nephi 10:5,D&C 43:24'
         }
     },
     {
         "question_200": {
-            question: 'This group of people was led by Moses out of Egypt and into the wilderness.',
-            answer: 'Israelites'
+            question: 'Shortly before being arrested, Jesus gave the parable of the sheep and the goats, the parable of the talents, and this parable, telling of individuals who were prepared with oil in their lamps.',
+            answer: 'The parable of the ten virgins'
         },
         "question_400": {
-            question: 'Jared and his family crossed the sea after the people rejected God and constructed this building.',
-            answer: 'Tower of Babel'
+            question: 'This man prophesied: "...this will I give unto you for a sign at the time of [the Savior\'s birth]... there shall be great lights in heaven, ... in the night before he cometh ... it shall appear unto man as if it was day."',
+            answer: 'Samuel the Lamanite',
+            reference: 'Helaman 14:3'
         },
         "question_600": {
-            question: 'The end of the book of Alma speaks of this man, who built ships until he sailed away and never returned.',
-            answer: 'Hagoth'
+            question: 'This is the location of a doctrinal mastery. It reads: "Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven."',
+            answer: 'Matthew 5:16'
         },
         "question_800": {
-            question: 'During the early saints’ westward journey, they had to stop due to sickness, mud, and the coming winter. They worked out a deal with the Omaha and Potawatomi tribes to establish this temporary settlement near the border of Iowa and Nebraska.',
-            answer: 'Winter Quarters'
+            question: 'This man was the leader of the Israelite army that fought against the Midianites. With only a few hundred people, they infiltrated the enemy camp at night, blew their trumpets, and revealed their lamps, causing confusion among the Midianites, who turned on each other in the chaos.',
+            answer: 'Gideon'
         },
         "question_1000": {
-            question: 'This man was offered riches to go curse the Israelites. On the way there, his donkey spoke to him and he was stopped by an angel. Ultimately, he decided to bless them instead.',
-            answer: 'Balaam'
+            question: 'These two prophets left to preach among the Lamanites and were cast into prison. As the Lamanites were about to kill these men, a great light shone around them like a pillar of fire, and the ground shook. Ultimately, most of the Lamanites were converted.',
+            answer: 'Nephi and Lehi'
         }
     },
     {
         "question_200": {
-            question: 'This proclamation was read by President Nelson in General Conference on April 5, 2020.',
-            answer: 'The Restoration Proclamation'
+            question: 'Who said it?',
+            media: '<audio controls><source src="patrick_kearon.mp3"></audio>',
+            answer: 'Patrick Kearon'
         },
         "question_400": {
-            question: 'This proclamation warned that the disintegration of the family would bring the calamities foretold by ancient and modern prophets.',
-            answer: 'The Family Proclamation'
+            question: 'Who said it?',
+            media: '<audio controls><source src="dale_g_renlund.mp3"></audio>',
+            answer: 'Dale G. Renlund'
         },
         "question_600": {
-            question: 'This Nephite king “made a proclamation throughout all the land”, teaching his people to be faithful to God, to help and care for each other, and to be “steadfast and immovable” in good works.',
-            answer: 'King Benjamin',
-            reference: 'Mosiah 2:1, 5:15'
+            question: 'Who said it?',
+            media: '<audio controls><source src="stephen_j_lund.mp3"></audio>',
+            answer: 'Stephen J. Lund'
         },
         "question_800": {
-            question: 'This man saw a book with 7 seals and “a strong angel [who proclaimed] with a loud voice, Who is worthy to open the book, and to loose the seals thereof?”',
-            answer: 'John',
-            reference: 'Revelation 5:2',
-            dailyDouble: true
+            question: 'Who said it?',
+            media: '<audio controls><source src="tamara_w_runia.mp3"></audio>',
+            answer: 'Tamara W. Runia'
         },
         "question_1000": {
-            question: 'The proclamation The Living Christ when this man was president of the church.',
-            answer: 'Gordon B. Hinckley'
+            question: 'Who said it?',
+            media: '<audio controls><source src="richard_g_scott.mp3"></audio>',
+            answer: 'Richard G. Scott'
         }
     }
 ];
