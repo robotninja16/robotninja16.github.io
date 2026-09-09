@@ -1,0 +1,119 @@
+html, body {
+    margin: 0px;
+    background-image: linear-gradient(to bottom, #2222FF, #1111AA);
+    height: calc(100% - 17px);
+    color: white;
+    font: 24px Arial, Helvetica, sans-serif;
+    cursor: default;
+}
+h2 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+h3 {
+    text-align: center;
+    font-size: 38px;
+    font-style: italic;
+}
+table, #questions {
+    margin: auto;
+    transition: opacity 0.5s ease;
+    text-align: center;
+}
+tr {
+    height: 100px;
+}
+th {
+    font-size: 24px;
+    font-weight: bold;
+}
+td, #final-jeopardy-button {
+    font-size: 40px;
+    color: #CFCF33;
+}
+th, td, #final-jeopardy-button {
+    width: 200px;
+    text-align: center;
+    border: 2px solid black;
+    background-image: radial-gradient(circle at 50% 0%, #4444FF, #2222FF);
+}
+input {
+    font: 24px Arial, Helvetica, sans-serif;
+    background-color: transparent;
+    border: none;
+    width: 100px;
+    color: white;
+}
+#left-team-money-section, #right-team-money-section {
+    position: absolute;
+    bottom: 100px;
+    border: 2px solid white;
+}
+:is(#left-team-money-section, #right-team-money-section)>* {
+    text-align: center;
+}
+#left-team-money-section {
+    left: 440px;
+}
+#right-team-money-section {
+    right: 440px;
+}
+:is(#left-team-money-section, #right-team-money-section) button {
+    border-radius: 100%;
+    width: 30px; height: 30px;
+}
+.hidden {
+    opacity: 0% !important;
+}
+#questions, #answer {
+    opacity: 100%;
+    transition: opacity 0.5s ease;
+}
+#question {
+    padding: 150px 400px 25px 400px;
+}
+#price {
+    margin: auto;
+    font-size: 40px;
+    height: 100px;
+    width: 200px;
+    text-align: center;
+    align-content: center;
+    border: 2px solid black;
+    background-image: radial-gradient(circle at 50% 0%, #4444FF, #2222FF);
+    color: #CFCF33;
+}
+#final-jeopardy-button {
+    transition: opacity 0.5s ease; 
+    font-size: 40px;
+    height: 100px;
+    align-content: center;
+    position: absolute;
+    right: 20px;
+}
+.no-display {
+    display: none;
+}
+.remove-question {
+    filter: brightness(75%);
+}
+#daily-double-info {
+    text-align: center;
+    transition: opacity 0.5s ease;
+}
+#questions button, #daily-double-info button {
+    width: 175px;
+    height: 50px;
+    border: 2px solid white;
+    background-color: lightgray;
+    margin: 6px;
+    border-radius: 10px;
+    font-size: 26px;
+}
+button:hover {
+    filter: brightness(110%);
+}
+td:hover, #final-jeopardy-button:hover {
+    filter: brightness(150%);
+}

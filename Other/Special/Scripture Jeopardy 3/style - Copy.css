@@ -1,0 +1,148 @@
+html, body {
+    margin: 0px;
+    background-image: linear-gradient(to bottom, #2222FF, #1111AA);
+    height: calc(100% - 17px);
+    color: white;
+    font: 24px Arial, Helvetica, sans-serif;
+    cursor: default;
+}
+h2 {
+    font-family: 'Impact';
+    color: #FFFF77;
+    -webkit-text-stroke: 0.5px black;
+    font-variant: small-caps;
+    text-align: center;
+    font-size: 40px;
+    /*font-weight: bold;*/
+}
+h3 {
+    text-align: center;
+    font-size: 38px;
+    font-style: italic;
+}
+#jeopardy-main-table, #questions {
+    transition: opacity 0.5s ease;
+    text-align: center;
+}
+#jeopardy-main-table {
+    max-width: 1200px;
+    margin: auto;
+}
+#jeopardy-main-table {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#jeopardy-main-table>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+}
+#jeopardy-main-table>div:first-child>span {
+    color: white;
+}
+#jeopardy-main-table>div:last-child {
+    justify-content: center;
+}
+#jeopardy-main-table>div>span {
+    margin: 2px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+#jeopardy-main-table>div:first-child>span {
+    font-size: 24px;
+    font-weight: bold;
+}
+#jeopardy-main-table>div>span, #final-jeopardy-button {
+    font-size: 40px;
+    color: #CFCF33;
+}
+#jeopardy-main-table>div>span, #final-jeopardy-button {
+    width: 200px;
+    text-align: center;
+    border: 2px solid black;
+    background-image: radial-gradient(circle at 50% 0%, #4444FF, #2222FF);
+}
+input {
+    font: 24px Arial, Helvetica, sans-serif;
+    background-color: transparent;
+    border: none;
+    width: 100px;
+    color: white;
+}
+#left-team-money-section, #right-team-money-section {
+    border: 2px solid white;
+}
+:is(#left-team-money-section, #right-team-money-section)>* {
+    text-align: center;
+}
+#teams-money-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 3vh;
+    width: 100vw;
+}
+:is(#left-team-money-section, #right-team-money-section) button {
+    border-radius: 100%;
+    width: 30px; height: 30px;
+}
+.hidden {
+    opacity: 0% !important;
+}
+#questions, #answer {
+    opacity: 100%;
+    transition: opacity 0.5s ease;
+}
+#question {
+    padding: 150px 21vw 25px 21vw;
+}
+#price {
+    margin: auto;
+    font-size: 40px;
+    height: 100px;
+    width: 200px;
+    text-align: center;
+    align-content: center;
+    border: 2px solid black;
+    background-image: radial-gradient(circle at 50% 0%, #4444FF, #2222FF);
+    color: #CFCF33;
+}
+#final-jeopardy-button {
+    transition: opacity 0.5s ease;
+    font-size: 40px;
+    align-content: center;
+    padding: 20px;
+}
+.no-display {
+    display: none !important;
+}
+.remove-question {
+    filter: brightness(75%);
+}
+#daily-double-info {
+    text-align: center;
+    transition: opacity 0.5s ease;
+}
+#questions button, #daily-double-info button {
+    width: 175px;
+    height: 50px;
+    border: 2px solid white;
+    background-color: lightgray;
+    margin: 6px;
+    border-radius: 10px;
+    font-size: 26px;
+}
+button:hover {
+    filter: brightness(110%);
+}
+#jeopardy-main-table>div:not(:first-child)>span:hover, #final-jeopardy-button:hover {
+    filter: brightness(150%);
+}
+.question-image {
+    max-width: 50vw;
+    max-height: 25vh;
+}

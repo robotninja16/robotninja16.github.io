@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="questions.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <title>This is Scripture Jeopardy!</title>
+</head>
+<body>
+    <h2>Scripture Jeopardy!</h2>
+    <div id="final-jeopardy-button" onclick="showQuestion('final')">Final Jeopardy</div>
+    <div id="daily-double-info" class="hidden no-display">
+        <h3>Daily double!</h3>
+        <button id="exit-daily-double">Continue</button>
+    </div>
+    <table id="jeopardy-main-table">
+        <thead>
+            <th>SCRIPTURAL FOOD</th><th>BODIES OF WATER</th><th>SAME NAME</th><th>REPTILES</th><th>BUILDERS & BUILDINGS</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>$200</td><td>$200</td><td>$200</td><td>$200</td><td>$200</td>
+            </tr>
+            <tr>
+                <td>$400</td><td>$400</td><td>$400</td><td>$400</td><td>$400</td>
+            </tr>
+            <tr>
+                <td>$600</td><td>$600</td><td>$600</td><td>$600</td><td>$600</td>
+            </tr>
+            <tr>
+                <td>$800</td><td>$800</td><td>$800</td><td>$800</td><td>$800</td>
+            </tr>
+            <tr>
+                <td>$1000</td><td>$1000</td><td>$1000</td><td>$1000</td><td>$1000</td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="left-team-money-section">
+        <div><button onclick="changeMoney('left-team-money-section',100)">+</button><button onclick="changeMoney('left-team-money-section',-100)">-</button></div>
+        <div><span>$</span><input type="number" value="0" step="100"></div>
+    </div>
+    <div id="right-team-money-section">
+        <div><button onclick="changeMoney('right-team-money-section',100)">+</button><button onclick="changeMoney('right-team-money-section',-100)">-</button></div>
+        <div><span>$</span><input type="number" value="0" step="100"></div>
+    </div>
+    <div id="questions" class="hidden no-display">
+        <div id="price"></div>
+        <div id="question"></div>
+        <div id="answer"></div>
+        <div id="buttons"><button onclick="exitQuestion()">Exit question</button><button id="show-answer">Show answer</button></div>
+    </div>
+</body>
+</html>
